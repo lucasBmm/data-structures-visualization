@@ -1,0 +1,16 @@
+.main-card {
+    margin-left: 25%;
+    width: 50%;
+}
+
+.card-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+        width: 30%;
+        margin-bottom: 1rem;
+    }
+}

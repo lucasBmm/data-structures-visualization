@@ -1,0 +1,35 @@
+.block-list {
+    .block-list__blocks-container {
+        display: flex;
+    }
+    .block-list__block {
+        background-color: lightgray;
+        padding: 1rem;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            margin-left: 1rem;
+        }
+    }
+
+    .block-enter {
+        opacity: 0;
+    }
+
+    .block-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in;
+    }
+
+    .block-exit {
+        opacity: 1;
+    }
+
+    .block-exit-active {
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+    }
+}

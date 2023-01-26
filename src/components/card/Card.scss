@@ -1,0 +1,14 @@
+.card {
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    .card__img {
+        width: 100%;
+    }
+    .card__text {
+        margin-top:1rem;
+    }
+}

@@ -1,9 +1,12 @@
 import React from 'react';
+import './Footer.scss';
 
 export function Footer() {
     return (
         <footer>
-            Footer works!
+            <div>
+                <p>Copyright © {new Date().getFullYear()} Lucas Bomfim</p>
+            </div>
         </footer>
     );
 }
