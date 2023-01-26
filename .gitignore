@@ -6,6 +6,7 @@ node_modules/
 .pnp.js
 localrepo.levain.yaml
 package-lock.json
+./package-lock.json
 
 # testing
 /coverage
