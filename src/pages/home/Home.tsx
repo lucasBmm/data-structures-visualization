@@ -37,7 +37,7 @@ export function Home() {
                 <Card 
                     imgSrc='https://marmelab.com/react-admin/img/simple-post-list.png' 
                     text='Linked List' 
-                    linkUrl='/linked-list' 
+                    linkUrl='linked-list' 
                 />
             </div>
             <div className="card-list">
