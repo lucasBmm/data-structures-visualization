@@ -24,14 +24,14 @@ class LinkedList<T> {
      *
      * @param data      Value to be inserted.
      */
-    add(data: T): void {
+    add(data: T): LinkedList<T> {
         let newNode = new LinkedListNode<T>(data);
 
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
             this.size++;
-            return;
+            return this;
         }
 
         if (!this.tail) {
@@ -41,6 +41,8 @@ class LinkedList<T> {
         [this.head, newNode.next] = [newNode, this.head];
         
         this.size++;
+
+        return this;
     }
 
     /**
@@ -48,14 +50,14 @@ class LinkedList<T> {
      *
      * @param data      Value to be inserted.
      */
-    append(data: T): void {
+    append(data: T): LinkedList<T> {
         let newNode = new LinkedListNode<T>(data);
 
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
             this.size++;
-            return;
+            return this;
         }
 
         if (this.tail)
@@ -64,6 +66,8 @@ class LinkedList<T> {
         this.tail = newNode;
 
         this.size++;
+
+        return this;
     }
 
     /**
@@ -124,21 +128,22 @@ class LinkedList<T> {
     /**
      * Remove the last node.
      */
-    pop(): T | void {
+    pop(): this {
         if (!this.head) {
-            return;
+            return this;
         }
 
         let n = this.head;
         let previusNode = n;
-        let removedValue: T | undefined;
+
+        if (!this.head.next)
+            this.head = null;
+            this.tail = null;
 
         while(n?.next) {
             previusNode = n;
             n = n.next;
         }
-
-        removedValue = previusNode?.next?.value;
 
         if (previusNode) 
             previusNode.next = null;
@@ -146,14 +151,14 @@ class LinkedList<T> {
 
         this.size--;
 
-        return removedValue;
+        return this;
     }
 
      /**
      * Remove the first node.
      */
-    shift(): void {
-        if (!this.head) return;
+    shift(): this {
+        if (!this.head) return this;
 
         let n = this.head;
         
@@ -165,10 +170,12 @@ class LinkedList<T> {
         if (!this.head) this.tail = null;    
         
         this.size--;
+
+        return this;
     }
 
-    reverse(): void {
-        if (!this.head) return;
+    reverse(): this {
+        if (!this.head) return this;
 
         let previusNode: LinkedListNode<T> | null = null;
         let nextNode: LinkedListNode<T>    | null = null;
@@ -183,6 +190,8 @@ class LinkedList<T> {
         }
 
         this.head = previusNode;
+
+        return this;
     }
 
     /**
@@ -192,6 +201,18 @@ class LinkedList<T> {
         this.head = null;
         this.tail = null;
         this.size = 0;
+    }
+
+    toList(): T[] {
+        const list: T[] = [];
+        let n = this.head;
+
+        while(n) {
+            list.push(n.value);
+            n = n.next;
+        }
+
+        return list;
     }
 
     toString(): string {
