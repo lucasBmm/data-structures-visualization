@@ -9,9 +9,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
-        <Route path="data-structures" >
-          <Route path='linked-list' element={<DataStructure />} />
-        </Route>
+        <Route path="/data-structures/:dataType" element={<DataStructure />} />
       </Routes>
     </BrowserRouter>
   );

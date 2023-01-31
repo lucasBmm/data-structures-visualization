@@ -1,7 +1,9 @@
 .block-list {
+    margin: 10% 0;
     .block-list__blocks-container {
         display: flex;
     }
+
     .block-list__block {
         background-color: lightgray;
         padding: 1rem;

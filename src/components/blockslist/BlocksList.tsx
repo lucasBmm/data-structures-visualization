@@ -7,7 +7,6 @@ interface Props {
 }
 
 const BlockList = ({ blocks }: Props) => {
-    
     return (
         <div className="block-list">
             <TransitionGroup className="block-list__blocks-container">
